@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="container">
+       <form #catForm="ngForm" (ngSubmit)="onEnviar(buttonType)"> 
+       <!-- form #cat="ngForm" (ngSubmit)="onTestPost(cat.value)" -->      
+       <div class="card">
+
+           <div class="card-header">
+               <h4>{{ titulo }}</h4>
+          </div>
+
+          <div class="card-body">
+             <label for="Codigo" >Código</label>
+             <input type="text" id="Codigo" ngModel name="codigo" required />         
+          </div> 
+            
+          <div class="card-body">
+             <label for="Categorias">Categoria</label>
+             <input type="text" id="Categorias" ngModel name="nome" />
+          </div>      
+      
+          <div class="card-body">
+             <label for="descricao">Descrição</label>
+             <input type="text" id="descricao" ngModel name="descricao" />
+          </div>       
+       </div>
+          <br />
+          <button type="submit" class="btn btn-primary" (click)="onEnviar('salvar')" style="margin-right: 10px;">Salvar</button>
+          <button type="button" class="btn btn-primary" (click)="onEnviar('consultar')">Consultar</button> 
+          <button type="button" class="btn btn-primary" (click)="onEnviar('limpar')">Limpar</button>        
+   </form>  
+    
+   <h3>Dados cadastrados</h3>      
+        
+          <ul class="list-group" *ngFor="let cat of categorias">
+            <div class="row">
+               <li class="list-group-item">
+                  <div class="col-4"> 
+                     Código: {{ cat.codigo }} 
+                   </div>  
+                   <div class="col-4"> 
+                     Nome: {{ cat.nome }} 
+                  </div>
+                  <div class="col-4"> 
+                     Descricao: {{cat.descricao}}
+                 </div>  
+                </li>
+            </div>    
+          </ul>
+      
+     </div>  
+   
+   </body>
+</html>

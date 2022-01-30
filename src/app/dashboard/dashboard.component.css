@@ -1,0 +1,10 @@
+body {
+    background-color: aquamarine;
+}
+
+.board-itens {
+    width: 150px;
+    height: 100px;
+    background-color: cadetblue;
+    border: 1px solid blue;
+}

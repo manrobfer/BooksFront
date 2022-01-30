@@ -1,0 +1,8 @@
+#container #cabecalho {text-align: center;
+                       color: blue;
+                       font-family: 'Courier New', Courier, monospace}
+
+#container ul li a {text-decoration: none;}  
+#container ul li{ display: inline;  }  
+
+.nav {color: white;}
